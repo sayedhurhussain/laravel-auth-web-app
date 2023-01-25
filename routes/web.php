@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
@@ -32,3 +33,11 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('myproducts', [ProductController::class, 'index']);
+Route::delete('myproducts/{id}', [ProductController::class, 'destroy']);
+Route::delete('myproductsDeleteAll', [ProductController::class, 'deleteAll']);
+
+// Route::get('myproducts', 'ProductController@index');
+// Route::delete('myproducts/{id}', 'ProductController@destroy');
+// Route::delete('myproductsDeleteAll', 'ProductController@deleteAll');
