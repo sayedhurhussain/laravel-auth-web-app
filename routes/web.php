@@ -35,6 +35,7 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+// Product Route
 Route::get('myproducts', [ProductController::class, 'index']);
 Route::delete('myproducts/{id}', [ProductController::class, 'destroy']);
 Route::delete('myproductsDeleteAll', [ProductController::class, 'deleteAll']);
